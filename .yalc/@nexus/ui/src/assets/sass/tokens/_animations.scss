@@ -1,0 +1,46 @@
+@use 'sass:map';
+
+// Animations - Premium WOW Factor & Micro-interactions
+
+$transitions: (
+  'fast': 150ms cubic-bezier(0.4, 0, 0.2, 1),
+  'base': 300ms cubic-bezier(0.4, 0, 0.2, 1),
+  'slow': 500ms cubic-bezier(0.4, 0, 0.2, 1),
+  'premium': 800ms cubic-bezier(0.16, 1, 0.3, 1) // Smooth entrance
+);
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in map.get($transitions, 'base') forwards;
+}
+
+.animate-slide-up {
+  animation: fade-in-up map.get($transitions, 'premium') forwards;
+}
+
+// Stagger delays
+@for $i from 1 through 10 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 100}ms;
+    opacity: 0; // Ensure it starts invisible
+  }
+}

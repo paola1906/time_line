@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@nexus/ui": {
+      "signature": "24be96cb299ff7280b3ac4360ed3a937",
+      "file": true
+    }
+  }
+}

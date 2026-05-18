@@ -1,0 +1,322 @@
+@use 'sass:map';
+
+// Colors - Feels Technology Brand Palette
+
+$white: #ffffff;
+$black: #000000;
+
+// 1. Primitive Tokens (Tailwind-like palettes)
+$color-slate: (
+  50: #f8fafc,
+  100: #f1f5f9,
+  200: #e2e8f0,
+  300: #cbd5e1,
+  400: #94a3b8,
+  500: #64748b,
+  600: #475569,
+  700: #334155,
+  800: #1e293b,
+  900: #0f172a,
+  950: #020617
+);
+
+$color-blue: (
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #3b82f6,
+  600: #2563eb,
+  700: #1d4ed8,
+  800: #1e40af,
+  900: #1e3a8a
+);
+
+$color-danger: (
+  50: #fff7ed,
+  100: #ffedd5,
+  200: #fed7aa,
+  300: #fdba74,
+  400: #fb923c,
+  500: #f97316,
+  600: #ea580c,
+  700: #c2410c,
+  800: #9a3412,
+  900: #7c2d12
+);
+
+$color-warning: (
+  50: #fefce8,
+  100: #fef9c3,
+  200: #fef08a,
+  300: #fde047,
+  400: #facc15,
+  500: #eab308,
+  600: #ca8a04,
+  700: #a16207,
+  800: #854d0e,
+  900: #713f12
+);
+
+$color-red: (
+  50: #fef2f2,
+  100: #fee2e2,
+  200: #fecaca,
+  300: #fca5a5,
+  400: #f87171,
+  500: #ef4444,
+  600: #dc2626,
+  700: #b91c1c,
+  800: #991b1b,
+  900: #7f1d1d
+);
+
+$color-emerald: (
+  50: #ecfdf5,
+  100: #d1fae5,
+  200: #a7f3d0,
+  300: #6ee7b7,
+  400: #34d399,
+  500: #10b981,
+  600: #059669,
+  700: #047857,
+  800: #065f46,
+  900: #064e3b
+);
+
+$color-cyan: (
+  50: #ecfeff,
+  100: #cffafe,
+  200: #a5f3fc,
+  300: #67e8f9,
+  400: #22d3ee,
+  500: #06b6d4,
+  600: #0891b2,
+  700: #0e7490,
+  800: #155e75,
+  900: #164e63
+);
+
+$color-indigo: (
+  50: #eef2ff,
+  100: #e0e7ff,
+  200: #c7d2fe,
+  300: #a5b4fc,
+  400: #818cf8,
+  500: #6366f1,
+  600: #4f46e5,
+  700: #4338ca,
+  800: #3730a3,
+  900: #312e81
+);
+$color-zinc: (
+  50: #fafafa,
+  100: #f4f4f5,
+  200: #e4e4e7,
+  300: #d4d4d8,
+  400: #a1a1aa,
+  500: #71717a,
+  600: #52525b,
+  700: #3f3f46,
+  800: #27272a,
+  900: #18181b
+);
+
+// 2. Surface & Depth (Glassmorphism Levels)
+$bg-level-1: $black; // Pure Black
+$bg-level-2: #0a0a0a; // Deep Grey
+$bg-level-3: #1a1a1a; // Elevation
+$glass-white: var(--nx-glass-bg, rgba($white, 0.05));
+$glass-border: var(--nx-glass-border, rgba(255, 255, 255, 0.1));
+
+// 3. Functional Tokens (The Logic) - Defined BEFORE :root export
+$action-primary: map.get($color-red, 500);
+$action-danger: map.get($color-danger, 500);
+$action-warning: map.get($color-warning, 300);
+$action-success: map.get($color-emerald, 500);
+$action-info: map.get($color-blue, 400);
+$action-secondary: map.get($color-cyan, 500);
+$action-cyan: map.get($color-cyan, 500);
+$action-indigo: map.get($color-indigo, 500);
+$action-zinc: map.get($color-zinc, 400);
+$action-focus: map.get($color-red, 500);
+
+:root {
+  // Primitives that stay constant
+  --nx-white: #{$white};
+  --nx-black: #{$black};
+
+  // Functional Themes
+  &,
+  &[data-theme='dark'] {
+    --nx-bg-primary: #{$black};
+    --nx-bg-secondary: #0a0a0a;
+    --nx-bg-tertiary: #1a1a1a;
+
+    --nx-text-main: #{$white};
+    --nx-text-muted: #{map.get($color-slate, 400)};
+
+    --nx-border-primary: rgba(255, 255, 255, 0.1);
+    --nx-border-soft: rgba(255, 255, 255, 0.05);
+
+    --nx-glass-bg: rgba(255, 255, 255, 0.05);
+    --nx-glass-border: rgba(255, 255, 255, 0.1);
+
+    // Export Color Palettes as CSS Variables
+    @each $name, $palette in (
+      "slate": $color-slate,
+      "blue": $color-blue,
+      "red": $color-red,
+      "emerald": $color-emerald,
+      "indigo": $color-indigo,
+      "zinc": $color-zinc,
+      "warning": $color-warning,
+      "danger": $color-danger,
+      "cyan": $color-cyan
+    ) {
+      @each $level, $color in $palette {
+        --nx-#{$name}-#{$level}: #{$color};
+      }
+    }
+
+    // Export Functional Action Tokens
+    --nx-action-primary: #{$action-primary};
+    --nx-action-secondary: #{$action-secondary};
+    --nx-action-success: #{$action-success};
+    --nx-action-warning: #{$action-warning};
+    --nx-action-danger: #{$action-danger};
+    --nx-action-info: #{$action-info};
+    --nx-action-indigo: #{$action-indigo};
+    --nx-action-cyan: #{$action-cyan};
+    --nx-action-zinc: #{$action-zinc};
+  }
+
+  &[data-theme='light'] {
+    --nx-bg-primary: #{map.get($color-slate, 50)};
+    --nx-bg-secondary: #{$white};
+    --nx-bg-tertiary: #{map.get($color-slate, 100)};
+
+    --nx-text-main: #{map.get($color-slate, 900)};
+    --nx-text-muted: #{map.get($color-slate, 500)};
+
+    --nx-border-primary: rgba(0, 0, 0, 0.1);
+    --nx-border-soft: rgba(0, 0, 0, 0.05);
+
+    --nx-glass-bg: rgba(255, 255, 255, 0.7);
+    --nx-glass-border: rgba(0, 0, 0, 0.05);
+  }
+}
+
+// 3. Functional Tokens (The Logic)
+// Surfaces
+$surface-primary: var(--nx-bg-primary, #{$bg-level-1});
+$surface-secondary: var(--nx-bg-secondary, #{$bg-level-2});
+$surface-tertiary: var(--nx-bg-tertiary, #{$bg-level-3});
+
+// Borders
+$border-primary: var(--nx-border-primary, rgba(255, 255, 255, 0.1));
+$border-soft: var(--nx-border-soft, rgba(255, 255, 255, 0.05));
+
+// Aliases
+$border-color: $border-soft;
+
+
+// Text
+$text-main: var(--nx-text-main, #ffffff);
+$text-muted: var(--nx-text-muted, #{map.get($color-slate, 400)});
+$text-on-brand: #ffffff;
+$text-danger: $action-danger;
+$text-warning: $action-warning;
+$text-success: $action-success;
+$text-info: map.get($color-blue, 400);
+$text-secondary: map.get($color-cyan, 400);
+$text-cyan: map.get($color-cyan, 400);
+$text-indigo: map.get($color-indigo, 400);
+$text-zinc: map.get($color-zinc, 400);
+$text-primary: map.get($color-red, 500);
+
+// Unified Action Tokens Map (Source of Truth for Mixins)
+$action-tokens: (
+  "primary": $action-primary,
+  "secondary": $action-secondary,
+  "success": $action-success,
+  "warning": $action-warning,
+  "danger": $action-danger,
+  "info": $action-info,
+  "indigo": $action-indigo,
+  "cyan": $action-cyan,
+  "zinc": $action-zinc,
+  "white": $white,
+  "main": $text-main
+);
+
+
+// Specific State Borders
+$border-danger: rgba($action-danger, 0.3);
+$border-warning: rgba($action-warning, 0.3);
+$border-success: rgba($action-success, 0.3);
+$border-info: rgba($action-info, 0.3);
+$border-secondary: rgba($action-secondary, 0.3);
+$border-cyan: rgba($action-cyan, 0.3);
+$border-indigo: rgba($action-indigo, 0.3); // More visible for docs/standard
+$border-zinc: rgba(map.get($color-zinc, 400), 0.3);
+
+// 4. Legacy/Compatibility Variables
+$bg-dark: $surface-primary;
+$bg-card: $surface-secondary;
+$primary: $action-primary;
+$secondary: $action-secondary;
+$income: $action-success;
+$expense: $action-danger;
+$warning: $action-warning;
+$success: $action-success;
+$danger: $action-danger;
+$info: $action-info;
+
+// Gradients
+$gradient-primary: linear-gradient(
+  135deg,
+  map.get($color-red, 500) 0%,
+  map.get($color-red, 300) 100%
+);
+$gradient-success: linear-gradient(
+  135deg,
+  map.get($color-emerald, 600) 0%,
+  map.get($color-emerald, 400) 100%
+);
+$gradient-secondary: linear-gradient(
+  135deg,
+  map.get($color-cyan, 600) 0%,
+  map.get($color-cyan, 400) 100%
+);
+$gradient-cyan: linear-gradient(
+  135deg,
+  map.get($color-cyan, 600) 0%,
+  map.get($color-cyan, 400) 100%
+);
+$gradient-indigo: linear-gradient(
+  135deg,
+  map.get($color-indigo, 600) 0%,
+  map.get($color-indigo, 400) 100%
+);
+$gradient-zinc: linear-gradient(
+  135deg,
+  map.get($color-zinc, 600) 0%,
+  map.get($color-zinc, 400) 100%
+);
+$gradient-danger: linear-gradient(
+  135deg,
+  map.get($color-danger, 600) 0%,
+  map.get($color-danger, 400) 100%
+);
+$gradient-warning: linear-gradient(
+  135deg,
+  map.get($color-warning, 600) 0%,
+  map.get($color-warning, 400) 100%
+);
+$gradient-info: linear-gradient(
+  135deg,
+  map.get($color-blue, 600) 0%,
+  map.get($color-blue, 400) 100%
+);

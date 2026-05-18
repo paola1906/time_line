@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+$sizes: (
+  'auth-glow': 600px, // px is ok for this decorative effect
+  'auth-glow-offset': -200px, // px is ok for this decorative effect
+  'auth-card-max-width': 27.5rem, // 440px
+  'person-card-min-width': 21.25rem, // 340px
+  'breakpoint-sm': 40rem, // 640px
+  'breakpoint-md': 48rem, // 768px
+  'breakpoint-lg': 64rem, // 1024px
+  'breakpoint-xl': 75rem, // 1200px
+  'sidebar-width': 17.5rem, // 280px
+  'sidebar-width-collapsed': 5rem, // 80px
+  'icon-sm': 1.125rem, // 18px
+  'skeleton-height-md': 3.75rem, // 60px
+  
+  // Component Heights
+  'height-sm': 2.125rem, // 34px
+  'height-md': 2.625rem, // 42px
+  'height-lg': 3.125rem, // 50px
+  'height-xl': 3.75rem,  // 60px
+  
+  // Specific Input Heights
+  'input-height-sm': 2rem,   // 32px
+  'input-height-lg': 3.25rem // 52px
+);

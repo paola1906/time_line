@@ -1,0 +1,59 @@
+@use 'tokens' as *;
+@use 'design-system' as *;
+@use 'markdown' as *;
+
+// Global Styles
+:root {
+  background-color: $bg-dark;
+  color: $text-main;
+  font-family: $font-main;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $bg-dark;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($white, 0.1);
+    border-radius: 10px;
+    border: 2px solid $bg-dark;
+    &:hover {
+      background: rgba($white, 0.2);
+    }
+  }
+}
+
+// Global class for glass scrollbars
+.glass-scroll {
+  overflow-y: auto;
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($white, 0.05);
+    border-radius: 10px;
+    &:hover {
+      background: rgba($white, 0.1);
+    }
+  }
+}
+
+// Global class for no-scroll
+.no-scroll {
+  overflow: hidden !important;
+  padding-right: 8px; // Prevent layout shift if scrollbar exists
+}
