@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use 'colors' as *;
+
+/// Generates color classes for a component using the unified action tokens.
+/// @param {String} $var-name - The name of the CSS variable to set (default: --component-color).
+@mixin component-colors($var-name: --component-color) {
+  @each $name, $value in $action-tokens {
+    &--color-#{$name} {
+      #{$var-name}: #{$value};
+    }
+  }
+}

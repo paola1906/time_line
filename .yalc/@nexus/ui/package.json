@@ -1,0 +1,90 @@
+{
+  "name": "@nexus/ui",
+  "version": "2.4.1",
+  "author": "Feels Technology",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./atoms": {
+      "types": "./dist/shared/components/atoms/index.d.ts",
+      "import": "./dist/shared/components/atoms/index.js",
+      "default": "./dist/shared/components/atoms/index.js"
+    },
+    "./atoms/*": {
+      "types": "./dist/shared/components/atoms/*/index.d.ts",
+      "import": "./dist/shared/components/atoms/*/index.js",
+      "default": "./dist/shared/components/atoms/*/index.js"
+    },
+    "./molecules": {
+      "types": "./dist/shared/components/molecules/index.d.ts",
+      "import": "./dist/shared/components/molecules/index.js",
+      "default": "./dist/shared/components/molecules/index.js"
+    },
+    "./molecules/*": {
+      "types": "./dist/shared/components/molecules/*/index.d.ts",
+      "import": "./dist/shared/components/molecules/*/index.js",
+      "default": "./dist/shared/components/molecules/*/index.js"
+    },
+    "./organisms": {
+      "types": "./dist/shared/components/organisms/index.d.ts",
+      "import": "./dist/shared/components/organisms/index.js",
+      "default": "./dist/shared/components/organisms/index.js"
+    },
+    "./organisms/*": {
+      "types": "./dist/shared/components/organisms/*/index.d.ts",
+      "import": "./dist/shared/components/organisms/*/index.js",
+      "default": "./dist/shared/components/organisms/*/index.js"
+    },
+    "./reactivity": {
+      "types": "./dist/shared/composables/use-reactivity.d.ts",
+      "import": "./dist/shared/composables/use-reactivity.js",
+      "default": "./dist/shared/composables/use-reactivity.js"
+    },
+    "./style.css": "./dist/ui.css",
+    "./scss": "./src/assets/sass/main.scss",
+    "./tokens": "./src/assets/sass/tokens/_index.scss",
+    "./design-system": "./src/assets/sass/design-system.scss",
+    "./tokens/colors": "./src/assets/sass/tokens/_colors.scss",
+    "./tokens/spacing": "./src/assets/sass/tokens/_spacing.scss",
+    "./tokens/typography": "./src/assets/sass/tokens/_typography.scss",
+    "./tokens/effects": "./src/assets/sass/tokens/_effects.scss",
+    "./tokens/animations": "./src/assets/sass/tokens/_animations.scss",
+    "./tokens/blur": "./src/assets/sass/tokens/_blur.scss",
+    "./tokens/sizes": "./src/assets/sass/tokens/_sizes.scss",
+    "./tokens/breakpoints": "./src/assets/sass/tokens/_breakpoints.scss"
+  },
+  "files": [
+    "dist",
+    "src/assets/sass"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode lib",
+    "build:app": "vite build",
+    "push": "npm run build && npx yalc push",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "dexie": "^4.0.1",
+    "dompurify": "^3.4.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.0",
+    "jspdf-autotable": "^5.0.7",
+    "lucide-vue-next": "^0.577.0",
+    "marked": "^18.0.3",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5"
+  },
+  "yalcSig": "24be96cb299ff7280b3ac4360ed3a937"
+}

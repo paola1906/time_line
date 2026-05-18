@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'tokens' as *;
+
+.markdown-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba($white, 0.85);
+
+  p { margin-bottom: 1rem; }
+
+  // 🖼️ High Fidelity Images (Sovereign Style)
+  .nx-md-image-wrapper {
+    position: relative;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba($white, 0.1);
+    background: rgba($white, 0.02);
+    width: 100%;
+    max-width: 100%;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // 📋 Tables
+  .nx-md-table-wrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba($white, 0.1);
+    
+    .nx-md-table {
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        padding: 12px;
+        border: 1px solid rgba($white, 0.05);
+      }
+      thead { background: rgba($white, 0.05); }
+    }
+  }
+
+  // 💻 Code
+  pre.nx-md-code-block {
+    background: #0d1117;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba($white, 0.9);
+  }
+
+  code {
+    background: rgba($white, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: $action-primary;
+  }
+}
