@@ -171,7 +171,7 @@
           Creado por <span class="highlight-author">Paola Yurani Rodríguez</span>
         </p>
         <p class="footer-nature">
-          Un viaje cronológico a través de la evolución de la forma y la función. Desarrollado con dedicación como un <span class="highlight-nature">Proyecto Familiar</span>.
+          Un viaje cronológico a través de la evolución de la forma y la función. Desarrollado con el entorno inteligente <span class="highlight-nature">Nexus Sisi</span> como un <span class="highlight-family">Proyecto Familiar</span>.
         </p>
         <div class="footer-copyright">
           <span>&copy; 2026 &bull; Todos los derechos reservados</span>
@@ -1316,8 +1316,13 @@ body {
 }
 
 .highlight-nature {
+  color: var(--nx-primary-400, #818cf8); /* Violeta de Nexus Sisi */
+  font-weight: 600;
+}
+
+.highlight-family {
   color: #10b981; /* Esmeralda para representar vida, unión y calor familiar */
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footer-copyright {
