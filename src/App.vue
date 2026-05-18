@@ -158,6 +158,26 @@
         </div>
       </div>
     </NxDialog>
+
+    <!-- SECCIÓN DE FOOTER INSTITUCIONAL / FAMILIAR -->
+    <footer class="ova-footer">
+      <div class="footer-divider"></div>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">🏛️</span>
+          <span class="footer-title">Museo de la Estética</span>
+        </div>
+        <p class="footer-author">
+          Creado por <span class="highlight-author">Paola Yurani Rodríguez</span>
+        </p>
+        <p class="footer-nature">
+          Un viaje cronológico a través de la evolución de la forma y la función. Desarrollado con dedicación como un <span class="highlight-nature">Proyecto Familiar</span>.
+        </p>
+        <div class="footer-copyright">
+          <span>&copy; 2026 &bull; Todos los derechos reservados</span>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -167,11 +187,7 @@ import {
   NxRichTimeline,
   NxRichTimelineItem,
   NxDialog,
-  NxBadge,
-  NxTag,
   NxAvatar,
-  NxIcon,
-  NxButton,
   NxMarkdownViewer,
 } from "@nexus/ui";
 import { Movement } from "./components/time-line/TimelineOvaView.data";
@@ -1234,5 +1250,78 @@ body {
   color: var(--nx-primary-500, #6366f1);
   font-size: 1.2rem;
   top: -2px;
+}
+
+/* Estilos para el Footer Premium */
+.ova-footer {
+  margin-top: 6rem;
+  padding: 4rem 2rem 3rem;
+  background: linear-gradient(to top, rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.4));
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.footer-divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--nx-primary-500, #6366f1), transparent);
+  margin: 0 auto 2.5rem;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-author {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+.highlight-author {
+  color: var(--nx-primary-400, #818cf8);
+  font-weight: 600;
+}
+
+.footer-nature {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.highlight-nature {
+  color: #10b981; /* Esmeralda para representar vida, unión y calor familiar */
+  font-weight: 500;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
 }
 </style>
