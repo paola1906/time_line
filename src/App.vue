@@ -29,7 +29,7 @@
           :title="movement.name"
           :time="movement.year"
           :description="movement.shortSummary"
-          :image="movement.thumbnail"
+          :image="import.meta.env.BASE_URL + movement.thumbnail"
           :item-index="index"
           :active="true"
           :color="getMovementColor(movement)"
@@ -55,7 +55,7 @@
         <!-- Hero del detalle -->
         <div class="detail-hero">
           <img
-            :src="selectedMovement.heroImage"
+            :src="import.meta.env.BASE_URL + selectedMovement.heroImage"
             :alt="selectedMovement.name"
             class="hero-img"
           />
@@ -91,7 +91,7 @@
                     :key="work.title"
                     class="work-card"
                   >
-                    <img :src="work.image" :alt="work.title" />
+                    <img :src="import.meta.env.BASE_URL + work.image" :alt="work.title" />
                     <div class="work-info">
                       <h4>{{ work.title }}</h4>
                       <span class="work-artist"
