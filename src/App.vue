@@ -8,7 +8,7 @@
       </div>
       <div class="header-image-overlay">
         <img
-          src="/assets/movements/renaissance_school_athens.png"
+          :src="baseUrl + 'assets/movements/renaissance_school_athens.png'"
           class="header-bg"
           alt="Escuela de Atenas"
         />
@@ -192,6 +192,9 @@ import {
 } from "@nexus/ui";
 import { Movement } from "./components/time-line/TimelineOvaView.data";
 
+// Base URL para rutas relativas en producción/despliegue
+const baseUrl = import.meta.env.BASE_URL;
+
 // Controladores del estado del Dialog
 const isDetailOpen = ref(false);
 const selectedMovement = ref<any>(null);
@@ -229,8 +232,8 @@ const movements: Movement[] = [
       "Paleolítico Superior y Neolítico. El nacimiento de la consciencia simbólica y la comunicación visual.",
     shortSummary:
       "El origen del símbolo: rituales, caza y el despertar de la imagen.",
-    thumbnail: "/assets/movements/prehistoric_venus.png",
-    heroImage: "/assets/movements/prehistoric_bison.png",
+    thumbnail: "assets/movements/prehistoric_venus.png",
+    heroImage: "assets/movements/prehistoric_bison.png",
     tags: ["Ritual", "Símbolo", "Supervivencia"],
     characteristics: [
       {
@@ -265,7 +268,7 @@ const movements: Movement[] = [
         year: "~15,000 a.C.",
         description:
           "Altamira: La Capilla Sixtina del arte rupestre; volumen magistral en roca.",
-        image: "/assets/movements/prehistoric_bison.png",
+        image: "assets/movements/prehistoric_bison.png",
       },
       {
         title: "Venus de Willendorf",
@@ -273,7 +276,7 @@ const movements: Movement[] = [
         year: "~25,000 a.C.",
         description:
           "Escultura en piedra que simboliza la fertilidad y el origen de la vida.",
-        image: "/assets/movements/prehistoric_venus.png",
+        image: "assets/movements/prehistoric_venus.png",
       },
     ],
     analysis: `### El Despertar de la Imagen
@@ -294,8 +297,8 @@ Es un arte táctil, terrenal y poderoso. Nos conecta con nuestros instintos más
       "La Edad Media europea, marcada por el feudalismo, el auge de las catedrales góticas y el teocentrismo absoluto.",
     shortSummary:
       "El arte y el diseño al servicio de la fe: luz mística, altura divina y simbolismo sagrado.",
-    thumbnail: "/assets/movements/medieval_notredame.png",
-    heroImage: "/assets/movements/medieval_notredame.png",
+    thumbnail: "assets/movements/medieval_notredame.png",
+    heroImage: "assets/movements/medieval_notredame.png",
     tags: ["Teocentrismo", "Luz Mística", "Gótico"],
     characteristics: [
       {
@@ -335,7 +338,7 @@ Es un arte táctil, terrenal y poderoso. Nos conecta con nuestros instintos más
         year: "1163 - 1250",
         description:
           "Icono gótico de arcos ojivales, gárgolas y el célebre rosetón de vitrales decorativos.",
-        image: "/assets/movements/medieval_notredame.png",
+        image: "assets/movements/medieval_notredame.png",
       },
     ],
     analysis: `### El Espacio como Experiencia Espiritual
@@ -356,8 +359,8 @@ Es solemne, divino y reverente. Nos invita a mirar hacia arriba. En el diseño d
       "Transición de la Edad Media a la Edad Moderna. Humanismo y redescubrimiento de la cultura clásica.",
     shortSummary:
       "El renacer de la proporción, la perspectiva y el ideal humano.",
-    thumbnail: "/assets/movements/renaissance_david.png",
-    heroImage: "/assets/movements/renaissance_school_athens.png",
+    thumbnail: "assets/movements/renaissance_david.png",
+    heroImage: "assets/movements/renaissance_school_athens.png",
     tags: ["Antropocentrismo", "Perspectiva", "Proporción"],
     characteristics: [
       {
@@ -407,7 +410,7 @@ Es solemne, divino y reverente. Nos invita a mirar hacia arriba. En el diseño d
         year: "1511",
         description:
           "La máxima expresión de la perspectiva y el pensamiento humanista.",
-        image: "/assets/movements/renaissance_school_athens.png",
+        image: "assets/movements/renaissance_school_athens.png",
       },
       {
         title: "El David",
@@ -415,7 +418,7 @@ Es solemne, divino y reverente. Nos invita a mirar hacia arriba. En el diseño d
         year: "1504",
         description:
           "Un triunfo de la proporción y la psicología humana en mármol.",
-        image: "/assets/movements/renaissance_david.png",
+        image: "assets/movements/renaissance_david.png",
       },
     ],
     analysis: `### El Despertar del Observador
@@ -436,8 +439,8 @@ Al observar una obra renacentista, sentimos **orden y paz**. Cada elemento está
       "La Ilustración y la Revolución Francesa. Retorno a los valores racionales.",
     shortSummary:
       "Racionalismo, orden y la sobriedad inspirada en Grecia y Roma.",
-    thumbnail: "/assets/movements/neoclassic_psyche.png",
-    heroImage: "/assets/movements/neoclassic_horatii.png",
+    thumbnail: "assets/movements/neoclassic_psyche.png",
+    heroImage: "assets/movements/neoclassic_horatii.png",
     tags: ["Razón", "Orden", "Moral"],
     characteristics: [
       {
@@ -487,7 +490,7 @@ Al observar una obra renacentista, sentimos **orden y paz**. Cada elemento está
         year: "1784",
         description:
           "El manifiesto visual del deber, el patriotismo y el rigor geométrico.",
-        image: "/assets/movements/neoclassic_horatii.png",
+        image: "assets/movements/neoclassic_horatii.png",
       },
       {
         title: "Eros y Psique",
@@ -495,7 +498,7 @@ Al observar una obra renacentista, sentimos **orden y paz**. Cada elemento está
         year: "1793",
         description:
           "Un equilibrio sublime entre la frialdad del mármol y la calidez del mito.",
-        image: "/assets/movements/neoclassic_psyche.png",
+        image: "assets/movements/neoclassic_psyche.png",
       },
     ],
     analysis: `### El Triunfo de la Mente
@@ -516,8 +519,8 @@ Nos transmite una sensación de control, justicia y permanencia. Es un arte que 
       "Fin de siècle. Transición hacia la modernidad decorativa y elegante.",
     shortSummary:
       "Líneas orgánicas, inspiración en la naturaleza y ornamentación fluida.",
-    thumbnail: "/assets/movements/artnouveau_gaudi.png",
-    heroImage: "/assets/movements/artnouveau_the_kiss.png",
+    thumbnail: "assets/movements/artnouveau_gaudi.png",
+    heroImage: "assets/movements/artnouveau_the_kiss.png",
     tags: ["Naturaleza", "Línea Látigo", "Estilización"],
     characteristics: [
       {
@@ -567,14 +570,14 @@ Nos transmite una sensación de control, justicia y permanencia. Es un arte que 
         year: "1908",
         description:
           "La unión mística entre la carne y la ornamentación bizantina.",
-        image: "/assets/movements/artnouveau_the_kiss.png",
+        image: "assets/movements/artnouveau_the_kiss.png",
       },
       {
         title: "La Sagrada Familia",
         artist: "Gaudí",
         year: "1882 - Presente",
         description: "Una catedral que crece como un bosque de piedra.",
-        image: "/assets/movements/artnouveau_gaudi.png",
+        image: "assets/movements/artnouveau_gaudi.png",
       },
     ],
     analysis: `### El Velo de la Naturaleza
@@ -595,8 +598,8 @@ Es pura elegancia y sensualidad. Nos rodea con formas que parecen estar vivas y 
       "Periodo de entreguerras y crisis existencial en Europa. El arte como grito.",
     shortSummary:
       "La subjetividad emocional por encima de la realidad objetiva.",
-    thumbnail: "/assets/movements/expressionism_kandinsky.png",
-    heroImage: "/assets/movements/expressionism_scream.png",
+    thumbnail: "assets/movements/expressionism_kandinsky.png",
+    heroImage: "assets/movements/expressionism_scream.png",
     tags: ["Angustia", "Color Subjetivo", "Distorsión"],
     characteristics: [
       {
@@ -646,7 +649,7 @@ Es pura elegancia y sensualidad. Nos rodea con formas que parecen estar vivas y 
         year: "1893",
         description:
           "La imagen definitiva de la ansiedad existencial contemporánea.",
-        image: "/assets/movements/expressionism_scream.png",
+        image: "assets/movements/expressionism_scream.png",
       },
       {
         title: "Composición VII",
@@ -654,7 +657,7 @@ Es pura elegancia y sensualidad. Nos rodea con formas que parecen estar vivas y 
         year: "1913",
         description:
           "Una tormenta de color y forma que busca la espiritualidad pura.",
-        image: "/assets/movements/expressionism_kandinsky.png",
+        image: "assets/movements/expressionism_kandinsky.png",
       },
     ],
     analysis: `### El Arte del Grito Interior
@@ -675,8 +678,8 @@ Es incómodo, vibrante y visceral. Nos obliga a mirar dentro de nosotros mismos.
       "Principios del siglo XX, una época de grandes revoluciones científicas (teoría de la relatividad) y el surgimiento del cine.",
     shortSummary:
       "La ruptura absoluta con la perspectiva tradicional: deconstrucción del plano en múltiples puntos de vista.",
-    thumbnail: "/assets/movements/cubism_avignon.png",
-    heroImage: "/assets/movements/cubism_avignon.png",
+    thumbnail: "assets/movements/cubism_avignon.png",
+    heroImage: "assets/movements/cubism_avignon.png",
     tags: ["Geometrización", "Deconstrucción", "Perspectiva"],
     characteristics: [
       {
@@ -721,7 +724,7 @@ Es incómodo, vibrante y visceral. Nos obliga a mirar dentro de nosotros mismos.
         year: "1907",
         description:
           "La obra fundacional del arte moderno que eliminó la perspectiva clásica e introdujo planos fracturados.",
-        image: "/assets/movements/cubism_avignon.png",
+        image: "assets/movements/cubism_avignon.png",
       },
     ],
     analysis: `### El Origen de la Abstracción Geométrica
@@ -741,8 +744,8 @@ Es cerebral, analítico y revolucionario. Desafía al observador a decodificar l
     historicalPeriod:
       "Influencia de las teorías del psicoanálisis de Freud tras la Primera Guerra Mundial.",
     shortSummary: "El mundo de los sueños, el subconsciente y lo irracional.",
-    thumbnail: "/assets/movements/surrealism_magritte.png",
-    heroImage: "/assets/movements/surrealism_clocks.png",
+    thumbnail: "assets/movements/surrealism_magritte.png",
+    heroImage: "assets/movements/surrealism_clocks.png",
     tags: ["Sueño", "Subconsciente", "Azar"],
     characteristics: [
       {
@@ -792,7 +795,7 @@ Es cerebral, analítico y revolucionario. Desafía al observador a decodificar l
         year: "1931",
         description:
           "La relatividad del tiempo a través de relojes que se derriten al sol.",
-        image: "/assets/movements/surrealism_clocks.png",
+        image: "assets/movements/surrealism_clocks.png",
       },
       {
         title: "El Hijo del Hombre",
@@ -800,7 +803,7 @@ Es cerebral, analítico y revolucionario. Desafía al observador a decodificar l
         year: "1964",
         description:
           "Una reflexión sobre lo que está oculto detrás de lo que vemos.",
-        image: "/assets/movements/surrealism_magritte.png",
+        image: "assets/movements/surrealism_magritte.png",
       },
     ],
     analysis: `### La Lógica de lo Absurdo
@@ -821,8 +824,8 @@ Es desconcertante y fascinante. Nos invita a jugar con lo imposible. La obra de 
       "La década de 1960 en Nueva York, marcada por la consolidación del diseño industrial de consumo y la reacción contra la carga emocional.",
     shortSummary:
       "La máxima reducción formal de los objetos: honestidad estructural y rechazo de la narrativa.",
-    thumbnail: "/assets/movements/minimalism_judd.png",
-    heroImage: "/assets/movements/minimalism_judd.png",
+    thumbnail: "assets/movements/minimalism_judd.png",
+    heroImage: "assets/movements/minimalism_judd.png",
     tags: ["Simplicidad", "Estructura Pura", "Literalidad"],
     characteristics: [
       {
@@ -867,7 +870,7 @@ Es desconcertante y fascinante. Nos invita a jugar con lo imposible. La obra de 
         year: "1969",
         description:
           "Una serie de 10 cajas idénticas de cobre y plexiglás verde colocadas verticalmente con precisión.",
-        image: "/assets/movements/minimalism_judd.png",
+        image: "assets/movements/minimalism_judd.png",
       },
     ],
     analysis: `### El Poder de la Simplicidad
