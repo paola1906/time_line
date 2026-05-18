@@ -29,7 +29,7 @@
           :title="movement.name"
           :time="movement.year"
           :description="movement.shortSummary"
-          :image="import.meta.env.BASE_URL + movement.thumbnail"
+          :image="baseUrl + movement.thumbnail"
           :item-index="index"
           :active="true"
           :color="getMovementColor(movement)"
@@ -55,7 +55,7 @@
         <!-- Hero del detalle -->
         <div class="detail-hero">
           <img
-            :src="import.meta.env.BASE_URL + selectedMovement.heroImage"
+            :src="baseUrl + selectedMovement.heroImage"
             :alt="selectedMovement.name"
             class="hero-img"
           />
@@ -91,7 +91,7 @@
                     :key="work.title"
                     class="work-card"
                   >
-                    <img :src="import.meta.env.BASE_URL + work.image" :alt="work.title" />
+                    <img :src="baseUrl + work.image" :alt="work.title" />
                     <div class="work-info">
                       <h4>{{ work.title }}</h4>
                       <span class="work-artist"
@@ -168,10 +168,14 @@
           <span class="footer-title">Museo de la Estética</span>
         </div>
         <p class="footer-author">
-          Creado por <span class="highlight-author">Paola Yurani Rodríguez</span>
+          Creado por
+          <span class="highlight-author">Paola Yurani Rodríguez</span>
         </p>
         <p class="footer-nature">
-          Un viaje cronológico a través de la evolución de la forma y la función. Desarrollado con el entorno inteligente <span class="highlight-nature">Nexus Sisi</span> como un <span class="highlight-family">Proyecto Familiar</span>.
+          Un viaje cronológico a través de la evolución de la forma y la
+          función. Desarrollado con el entorno inteligente
+          <span class="highlight-nature">Nexus Sisi</span> como un
+          <span class="highlight-family">Proyecto Familiar</span>.
         </p>
         <div class="footer-copyright">
           <span>&copy; 2026 &bull; Todos los derechos reservados</span>
@@ -1259,7 +1263,11 @@ body {
 .ova-footer {
   margin-top: 6rem;
   padding: 4rem 2rem 3rem;
-  background: linear-gradient(to top, rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.4));
+  background: linear-gradient(
+    to top,
+    rgba(9, 9, 11, 0.95),
+    rgba(9, 9, 11, 0.4)
+  );
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 10;
@@ -1269,7 +1277,12 @@ body {
 .footer-divider {
   width: 150px;
   height: 2px;
-  background: linear-gradient(to right, transparent, var(--nx-primary-500, #6366f1), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--nx-primary-500, #6366f1),
+    transparent
+  );
   margin: 0 auto 2.5rem;
 }
 
@@ -1294,7 +1307,11 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.025em;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
